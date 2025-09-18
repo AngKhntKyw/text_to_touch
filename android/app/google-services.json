@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "398314793727",
+    "project_id": "text-to-touch",
+    "storage_bucket": "text-to-touch.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398314793727:android:830b9e2d7d8a834e31faca",
+        "android_client_info": {
+          "package_name": "com.example.text_to_touch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGvihrEWVJ8pZjgw5NKTgghDdZg7oNEX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
