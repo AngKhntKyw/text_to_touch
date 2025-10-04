@@ -1,26 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/theme_setting_page.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   static const routeName = "/profile-page";
 
   const ProfilePage({super.key});
 
   @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Profile")),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ListTile(
-            onTap: () =>
-                Navigator.of(context).pushNamed(ThemeSettingsPage.routeName),
-            leading: Icon(Icons.color_lens),
-            title: Text("Theme"),
-          ),
-        ],
-      ),
-    );
+    return Scaffold(appBar: AppBar(title: const Text("Profile")));
   }
 }

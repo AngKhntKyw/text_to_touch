@@ -14,6 +14,12 @@ class TextFromFields extends StatelessWidget {
     return TextFormField(
       controller: controller,
       decoration: InputDecoration(labelText: hintText),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return "enter $hintText";
+        }
+        return null;
+      },
     );
   }
 }

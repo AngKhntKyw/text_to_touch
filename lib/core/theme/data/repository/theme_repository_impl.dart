@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:test_app/core/theme/domain/entity/app_theme.dart';
 
@@ -15,9 +14,7 @@ class ThemeRepositoryImpl implements ThemeRepository {
 
   @override
   Future<AppThemeMode> getSavedThemeMode() async {
-    log("Get saved theme");
     final String? themeModeString = sharedPreferences.getString(_themeModeKey);
-    log(themeModeString ?? "THEME NULL");
     if (themeModeString != null) {
       try {
         return AppThemeMode.values.firstWhere(
@@ -25,7 +22,6 @@ class ThemeRepositoryImpl implements ThemeRepository {
           orElse: () => AppThemeMode.system,
         );
       } catch (e) {
-        log("Error parsing theme mode: $e");
         return AppThemeMode.system;
       }
     }
@@ -34,11 +30,6 @@ class ThemeRepositoryImpl implements ThemeRepository {
 
   @override
   Future<void> saveThemeMode(AppThemeMode themeMode) async {
-    log(_themeModeKey);
-    log(themeMode.name);
     await sharedPreferences.setString(_themeModeKey, themeMode.name);
-    log("AFTER");
-    final String? themeModeString = sharedPreferences.getString(_themeModeKey);
-    log("After $themeModeString");
   }
 }
